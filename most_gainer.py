@@ -27,7 +27,8 @@ def get_jsonparsed_data(url):
     data = response.read().decode("utf-8")
     return json.loads(data)
 
-# url = ("https://financialmodelingprep.com/api/v3/stock/gainers?apikey=547d8ef187922d70f8f9a1cbebd851c4")
+API_KEY_M_GAINER = config.API_KEY_MOST_GAINER
+url = ("https://financialmodelingprep.com/api/v3/stock/gainers?apikey={}".format(API_KEY_M_GAINER))
 # print(get_jsonparsed_data(url))
-print(config.API_KEY_MOST_GAINER)
+print(url)
 
