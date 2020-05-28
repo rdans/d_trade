@@ -10,6 +10,9 @@ except ImportError:
 
 import json
 import config
+import time
+from datetime import datetime
+
 
 def get_jsonparsed_data(url):
     """
@@ -29,6 +32,18 @@ def get_jsonparsed_data(url):
 
 API_KEY_M_GAINER = config.API_KEY_MOST_GAINER
 url = ("https://financialmodelingprep.com/api/v3/stock/gainers?apikey={}".format(API_KEY_M_GAINER))
-# print(get_jsonparsed_data(url))
-print(url)
+
+data = get_jsonparsed_data(url)
+
+# Serializing json  
+json_object = json.dumps(data, indent = 4) 
+
+date = datetime.now()
+date_str = date.strftime("%y%m%d_%H%M")
+  
+# Writing to sample.json 
+with open("./most_gainer_data/most_gainer_{0}_{1}.json".format(date_str, int(time.time())), "w") as outfile: 
+    outfile.write(json_object)
+
+
 
