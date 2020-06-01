@@ -50,7 +50,9 @@ def write_to_json(data):
 # TO-DO -> Read current date and run all of the JSON with current date manually
 
 set_of_ticker = set()
-list_of_json = ['most_gainer_200528_0838_1590680282.json', 'most_gainer_200528_1758_1590713889.json']
+list_of_json = ['most_gainer_200529_0853_1590767595.json', 
+                'most_gainer_200529_1116_1590776210.json',
+                'most_gainer_200529_1628_1590794884.json']
 
 for json_file in list_of_json:
     # Opening JSON file 
